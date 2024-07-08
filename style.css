@@ -1,126 +1,106 @@
-*{
-    padding: none;
-    margin: none;
-    box-sizing: border-box;
+* {
+  padding: none;
+  margin: none;
+  box-sizing: border-box;
 }
 
-body{
-    width: 100%;
-    height: 100vh;
+body {
+  width: 100%;
+  height: 100vh;
 }
 
-.big-container{
-    width: 100%;
-    margin: auto;
-    padding: 15px;
-    border: 2px solid red;
+.big-container {
+  width: 100%;
+  margin: auto;
+  padding: 15px;
+  border: 2px solid red;
 }
-.navbar{
-    box-shadow: -5px 8px 11px 0px rgba(176,176,176,0.4);
--webkit-box-shadow: -5px 8px 11px 0px rgba(176,176,176,0.4);
--moz-box-shadow: -5px 8px 11px 0px rgba(176,176,176,0.4);
+.navbar {
+  box-shadow: -5px 8px 11px 0px rgba(176, 176, 176, 0.4);
+  -webkit-box-shadow: -5px 8px 11px 0px rgba(176, 176, 176, 0.4);
+  -moz-box-shadow: -5px 8px 11px 0px rgba(176, 176, 176, 0.4);
 }
-.main-info{
-    width: 90%;
-    margin: auto;
-    margin-block: 20px;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    border: 2px solid rgb(80, 80, 255);
-}
-
-.main-weather-icon{
-    width: 16rem;
-    text-align: center;
+.main-info {
+  width: 90%;
+  margin: auto;
+  margin-block: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid rgb(80, 80, 255);
 }
 
-.main-content{
-    padding: 20px;
+.main-weather-icon {
+  width: 16rem;
+  text-align: center;
 }
-.main-content h1{
-    font-weight: 600;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+.main-content {
+  padding: 20px;
 }
-.main-content h4{
-    font-weight: 700;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 30px;
+.main-content h1 {
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.Weather-description{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 700;
-    font-size: 35px;
-    margin-block: 15px;
+.main-content h4 {
+  font-weight: 700;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+}
+.Weather-description {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  margin-block: 15px;
 }
 
 /* Day Card */
 
+.day {
+  width: 200px;
+  text-align: center;
+  border: 2px solid red;
+}
+.daycard {
+  border: 3px solid greenyellow;
+}
+.dayhead{
+    font-size: 20px;
+  color: white;
+  font-weight: 600;
+}
 .HR {
-    margin-block: 14px;
-  }
-  .weathercondition {
+  margin-block: 14px;
+}
+.dayicon {
+  width: 50px;
+}
+.daytemp {
+  margin-block: 10px;
+}
+
+.daytemp {
+  font-size: 1rem;
+}
+
+.daydes{
+
+}
+
+
+@media only screen and (max-width: 767px) {
+  .navbar {
     text-align: center;
-    color: white;
-    margin-bottom: 10px;
   }
-  .day{
-    min-width: 500px;
-    max-width: 600px;
-    height: auto;
-    padding: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    z-index: 60;
-  }
-  .dayhead{
-    color: white;
-    font-weight: 100;
-  }
-  .daycard{
-    padding-block: 10px;
-    padding-inline: 30px;
-    text-align: center;
-    backdrop-filter: blur(6px) saturate(189%);
-    -webkit-backdrop-filter: blur(6px) saturate(189%);
-    background-color: rgba(87, 89, 90, 0.448);
-    border-radius: 12px;
-    border: 2px solid rgba(0, 0, 0, 0.125);
-    z-index: 70;
-  }
-  .daytemp{
-    margin-block: 10px;
-  }
-  .weatherdayicon{
-    width: 50px;
-    height: 50px;
-  }
-  .weatherdayicon img {
+  .main-info {
     width: 100%;
-    height: 100%;
-    object-fit: fill;
+    padding: 5px;
+    text-align: center;
   }
-  .daytemp{
-    font-size: 1rem;
+  .main-content {
+    padding: 15px;
+    /* text-align: center; */
   }
-  
-@media only screen and (max-width: 767px){
-    .navbar{
-        text-align: center;
-    }
-    .main-info{
-        width: 100%;
-       padding: 5px;
-       text-align: center;
-    }
-    .main-content{
-        padding: 15px;
-        /* text-align: center; */
-    }
 }
