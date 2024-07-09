@@ -13,7 +13,27 @@ body {
   width: 100%;
   margin: auto;
   padding: 15px;
-  border: 2px solid red;
+  position: relative;
+}
+.img-screen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border: 3px solid rgb(109, 251, 247);
+}
+.img-screen::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(47, 55, 68, 0.8);
+}
+.img-screen img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .navbar {
   box-shadow: -5px 8px 11px 0px rgba(176, 176, 176, 0.4);
@@ -21,7 +41,7 @@ body {
   -moz-box-shadow: -5px 8px 11px 0px rgba(176, 176, 176, 0.4);
 }
 .main-info {
-  width: 90%;
+  width: 80%;
   margin: auto;
   margin-block: 20px;
   padding: 20px;
@@ -29,7 +49,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   gap: 20px;
-  border: 2px solid rgb(80, 80, 255);
+  margin-top: 50px;
 }
 
 .main-weather-icon {
@@ -38,7 +58,9 @@ body {
 }
 
 .main-content {
-  padding: 20px;
+  text-align: center;
+  width: 50%;
+  padding-inline: 80px;
 }
 .main-content h1 {
   font-weight: 600;
@@ -58,49 +80,38 @@ body {
 
 /* Day Card */
 
+.days-forcast{
+  margin-top: 80px;
+}
+
 .day {
-  width: 200px;
-  text-align: center;
+  width: 150px;
   border: 2px solid red;
 }
-.daycard {
-  border: 3px solid greenyellow;
-}
 .dayhead{
-    font-size: 20px;
-  color: white;
+  font-size: 20px;
   font-weight: 600;
 }
-.HR {
-  margin-block: 14px;
-}
 .dayicon {
-  width: 50px;
-}
-.daytemp {
-  margin-block: 10px;
+  width: 60px;
+  margin-top: 20px;
 }
 
-.daytemp {
-  font-size: 1rem;
-}
-
-.daydes{
-
-}
-
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .navbar {
     text-align: center;
   }
   .main-info {
     width: 100%;
-    padding: 5px;
+    /* padding: 5px; */
     text-align: center;
+  }
+  .main-weather-icon{
+    width: 100%;
+    width: 12rem;
   }
   .main-content {
     padding: 15px;
-    /* text-align: center; */
+    width: 100%;
   }
 }
