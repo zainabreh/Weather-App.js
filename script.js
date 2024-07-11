@@ -63,6 +63,8 @@ const displayData = (data) => {
   //   minute: "numeric",
   //   timeZone: timezone,
   // });
+  
+  
   let bgScreen = `<div class="screen">
           <img src="${bgScreenIcon}">
         </div>`;
