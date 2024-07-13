@@ -6,18 +6,20 @@
 
 .big-container {
   width: 100%;
+  height: 100%;
   margin: auto;
   padding: 15px;
   position: relative;
-  border: 3px solid rgb(70, 253, 3);
 }
 .img-screen{
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: -1;
-  border: 3px solid rgb(109, 251, 247);
+  width: 100%;
+  height: 100vh;
+  background-size: cover; 
+  background-position: center; 
 }
 .img-screen::before{
   content: "";
@@ -26,16 +28,13 @@
   background-color: rgba(47, 55, 68, 0.8);
 }
 .img-screen img{
-  width: 100%;
-  height: 100%;
+  width: 100%; 
+  height: 100vh; 
+  background-size: cover; 
+  background-position: center;
   object-fit: cover;
 }
-.screen{
-  width: 100%;
-}
-.screen img{
-  width: 100%;
-}
+
 .navbar {
   color: white;
 }
@@ -73,6 +72,24 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
 }
+.city-date{
+  opacity: 0.8; 
+  font-size: 15px
+}
+.wind{
+  font-size: 17px;
+}
+.wind span{
+  font-weight: 700; 
+  font-size: 17px;
+}
+.humidity{
+  font-size: 17px;
+}
+.humidity span{
+  font-weight: 700; 
+  font-size: 17px;
+}
 .Weather-description {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 700;
@@ -83,22 +100,13 @@
 /* Day Card */
 
 .days-forcast{
-  margin-top: 80px;
-}
-.day {
-  width: 150px;
-  color: white;
-  border-radius: 12px;
-  padding-block: 5px;
-  box-shadow: inset 0px 1px 5px 5px wheat;
-}
-.dayhead{
-  font-size: 20px;
-  font-weight: 600;
+  width: 100%;
+  height: 300px;
+  overflow-y: scroll;
 }
 .dayicon {
-  width: 60px;
-  margin-top: 20px;
+  width: 50px;
+  margin-top: 5px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -107,15 +115,43 @@
   }
   .main-info {
     width: 100%;
-    /* padding: 5px; */
     text-align: center;
   }
   .main-weather-icon{
-    width: 100%;
-    width: 12rem;
+    width: 5rem;
   }
   .main-content {
-    padding: 15px;
     width: 100%;
+  }
+  .img-screen img{
+    object-fit: cover;
+  }
+  .main-content h1 {
+    font-size: 17.5px;
+  }
+  .main-content h4 {
+    font-size: 20px;
+  }
+  .Weather-description {
+    font-size: 22px;
+    margin-block: 10px;
+  }
+  .city-date{
+    font-size: 12px;
+  }
+  .wind{
+    font-size: 12px;
+  }
+  .wind span{
+    font-size: 13px;
+  }
+  .humidity{
+    font-size: 12px;
+  }
+  .humidity span{
+    font-size: 13px;
+  }
+  .days-forcast{
+    height: 240px;
   }
 }
