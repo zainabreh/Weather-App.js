@@ -115,8 +115,16 @@ const displayData = (data) => {
 
   // Days Data
 
+  let uniqueDays = new Set();
+  data.list.forEach((dayData) => {
+    let day = new Date(dayData.dt_txt).toLocaleDateString("en", {
+      weekday: "long",
+    });
+    uniqueDays.add(day);
+  });
+  
   let daysData = `
-    <div class="table-responsive-sm">
+    <div class="table-responsive">
       <table class="table table-dark" style="opacity:.9; ">
         <thead>
           <tr>
@@ -127,16 +135,21 @@ const displayData = (data) => {
         </thead>
         <tbody>
   `;
-
-  for (let i = 1; i < 6; i++) {
-    let dayData = data.list[i];
-    let day = new Date(dayData.dt_txt[i]).toLocaleDateString("en", {
-      weekday: "long",
-    });
+  
+  data.list.sort((a, b) => new Date(a.dt_txt) - new Date(b.dt_txt));
+  
+  let dayIndex = 0;
+  uniqueDays.forEach((day) => {
+    let dayData = data.list[dayIndex];
+    while (dayIndex < data.list.length && new Date(data.list[dayIndex].dt_txt).toLocaleDateString("en", { weekday: "long" }) === day) {
+      dayIndex++;
+    }
+    dayIndex--;
+    dayData = data.list[dayIndex];
     let temp = dayData.main.temp;
     let weatherIcon = getWeatherIcon(dayData.weather[0].main);
     let weatherDesc = dayData.weather[0].main;
-
+  
     daysData += `
       <tr>
         <td style="font-weight:500; font-size:18px;">${day}</td>
@@ -147,15 +160,18 @@ const displayData = (data) => {
         </td>
       </tr>
     `;
-  }
-
+    dayIndex++;
+  });
+  
   daysData += `
         </tbody>
       </table>
     </div>
   `;
   days_container.innerHTML = daysData;
-};
+
+}
+
 
 const getWeatherIcon = (weatherCondition) => {
   if (weatherCondition == "Clouds") {
